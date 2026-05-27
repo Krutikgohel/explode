@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../lib/explode.dart';
+import 'package:explode/explode.dart';
 
 void main() {
   runApp(const MyApp());
@@ -52,10 +52,7 @@ class _BlastHomePageState extends State<BlastHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(_titles[_currentPage]),
-        centerTitle: true,
-      ),
+      appBar: AppBar(title: Text(_titles[_currentPage]), centerTitle: true),
       body: Column(
         children: [
           Expanded(
@@ -87,9 +84,10 @@ class _BlastHomePageState extends State<BlastHomePage> {
           height: 8,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(4),
-            color: _currentPage == index
-                ? Theme.of(context).primaryColor
-                : Colors.grey[400],
+            color:
+                _currentPage == index
+                    ? Theme.of(context).primaryColor
+                    : Colors.grey[400],
           ),
         );
       }),
@@ -118,17 +116,17 @@ class DemoItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text(label, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
+        Text(
+          label,
+          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+        ),
         const SizedBox(height: 10),
         Stack(
           alignment: Alignment.center,
           children: [
-             // Placeholder area to keep layout stable when blasted
+            // Placeholder area to keep layout stable when blasted
             const SizedBox(width: 120, height: 120),
-            GestureDetector(
-              onTap: () => controller.explode(),
-              child: child,
-            ),
+            GestureDetector(onTap: () => controller.explode(), child: child),
           ],
         ),
         // TextButton.icon(
@@ -147,20 +145,29 @@ abstract class BaseDemoPage extends StatefulWidget {
 
 abstract class BaseDemoPageState<T extends BaseDemoPage> extends State<T> {
   // Helper to build the page layout
-  Widget buildPageLayout({required List<Widget> children, required VoidCallback onResetAll}) {
+  Widget buildPageLayout({
+    required List<Widget> children,
+    required VoidCallback onResetAll,
+  }) {
     return SingleChildScrollView(
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 40),
         child: Column(
           children: [
-            ...children.map((c) => Padding(padding: const EdgeInsets.only(bottom: 30), child: c)),
+            ...children.map(
+              (c) =>
+                  Padding(padding: const EdgeInsets.only(bottom: 30), child: c),
+            ),
             const SizedBox(height: 20),
             ElevatedButton.icon(
               onPressed: onResetAll,
               icon: const Icon(Icons.restore),
               label: const Text("Reset All"),
               style: ElevatedButton.styleFrom(
-                padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 32,
+                  vertical: 16,
+                ),
               ),
             ),
           ],
@@ -169,7 +176,6 @@ abstract class BaseDemoPageState<T extends BaseDemoPage> extends State<T> {
     );
   }
 }
-
 
 // -----------------------------------------------------------------------------
 // Page 1: Shapes
@@ -297,7 +303,7 @@ class _DurationDemoPageState extends BaseDemoPageState<DurationDemoPage> {
             child: _buildCard("Slow", Colors.teal),
           ),
         ),
-        SizedBox(height: 30,),
+        SizedBox(height: 30),
       ],
     );
   }
@@ -309,7 +315,13 @@ class _DurationDemoPageState extends BaseDemoPageState<DurationDemoPage> {
         width: 120,
         height: 80,
         child: Center(
-          child: Text(text, style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+          child: Text(
+            text,
+            style: const TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
         ),
       ),
     );
@@ -323,10 +335,12 @@ class ParticleCustomizationPage extends BaseDemoPage {
   const ParticleCustomizationPage({super.key});
 
   @override
-  State<ParticleCustomizationPage> createState() => _ParticleCustomizationPageState();
+  State<ParticleCustomizationPage> createState() =>
+      _ParticleCustomizationPageState();
 }
 
-class _ParticleCustomizationPageState extends BaseDemoPageState<ParticleCustomizationPage> {
+class _ParticleCustomizationPageState
+    extends BaseDemoPageState<ParticleCustomizationPage> {
   final ExplodeController _smallCtrl = ExplodeController();
   final ExplodeController _largeCtrl = ExplodeController();
   final ExplodeController _countCtrl = ExplodeController();
@@ -379,7 +393,10 @@ class _ParticleCustomizationPageState extends BaseDemoPageState<ParticleCustomiz
     return CircleAvatar(
       radius: 40,
       backgroundColor: color,
-      child: Text(text, style: const TextStyle(color: Colors.white, fontSize: 10)),
+      child: Text(
+        text,
+        style: const TextStyle(color: Colors.white, fontSize: 10),
+      ),
     );
   }
 }
@@ -414,14 +431,18 @@ class _ComplexUIDemoPageState extends BaseDemoPageState<ComplexUIDemoPage> {
             controller: _profileCtrl,
             child: Card(
               elevation: 8,
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12),
+              ),
               child: Container(
                 width: 250,
                 padding: const EdgeInsets.all(16),
                 child: Row(
                   children: [
                     const CircleAvatar(
-                      backgroundImage: NetworkImage('https://i.pravatar.cc/150?img=12'),
+                      backgroundImage: NetworkImage(
+                        'https://i.pravatar.cc/150?img=12',
+                      ),
                       radius: 24,
                     ),
                     const SizedBox(width: 16),
@@ -430,12 +451,22 @@ class _ComplexUIDemoPageState extends BaseDemoPageState<ComplexUIDemoPage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          Text("John Doe", style: Theme.of(context).textTheme.titleMedium),
-                          const Text("Software Engineer", style: TextStyle(color: Colors.grey)),
+                          Text(
+                            "John Doe",
+                            style: Theme.of(context).textTheme.titleMedium,
+                          ),
+                          const Text(
+                            "Software Engineer",
+                            style: TextStyle(color: Colors.grey),
+                          ),
                         ],
                       ),
                     ),
-                    const Icon(Icons.arrow_forward_ios, size: 16, color: Colors.grey),
+                    const Icon(
+                      Icons.arrow_forward_ios,
+                      size: 16,
+                      color: Colors.grey,
+                    ),
                   ],
                 ),
               ),
@@ -452,13 +483,25 @@ class _ComplexUIDemoPageState extends BaseDemoPageState<ComplexUIDemoPage> {
             child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 12),
               decoration: BoxDecoration(
-                gradient: const LinearGradient(colors: [Colors.pink, Colors.orange]),
+                gradient: const LinearGradient(
+                  colors: [Colors.pink, Colors.orange],
+                ),
                 borderRadius: BorderRadius.circular(30),
                 boxShadow: [
-                  BoxShadow(color: Colors.pink.withOpacity(0.4), blurRadius: 8, offset: const Offset(0, 4))
+                  BoxShadow(
+                    color: Colors.pink.withValues(alpha: 0.4),
+                    blurRadius: 8,
+                    offset: const Offset(0, 4),
+                  ),
                 ],
               ),
-              child: const Text("Delete Account", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+              child: const Text(
+                "Delete Account",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
             ),
           ),
         ),
@@ -496,10 +539,14 @@ class _ExplodeAreaDemoPageState extends BaseDemoPageState<ExplodeAreaDemoPage> {
           child: Explode(
             controller: _smallAreaCtrl,
             explodeArea: const Size(100, 100),
-            child: _buildAreaBox("Small (100x100)", Icons.zoom_in_map, Colors.teal),
+            child: _buildAreaBox(
+              "Small (100x100)",
+              Icons.zoom_in_map,
+              Colors.teal,
+            ),
           ),
         ),
-        SizedBox(height: 100,),
+        SizedBox(height: 100),
         DemoItem(
           label: "Large Explode Area (600x600)",
           controller: _largeAreaCtrl,
@@ -507,10 +554,14 @@ class _ExplodeAreaDemoPageState extends BaseDemoPageState<ExplodeAreaDemoPage> {
           child: Explode(
             controller: _largeAreaCtrl,
             explodeArea: const Size(600, 600),
-            child: _buildAreaBox("Large (600x600)", Icons.zoom_out_map, Colors.indigo),
+            child: _buildAreaBox(
+              "Large (600x600)",
+              Icons.zoom_out_map,
+              Colors.indigo,
+            ),
           ),
         ),
-        SizedBox(height: 100,),
+        SizedBox(height: 100),
       ],
     );
   }
@@ -523,11 +574,7 @@ class _ExplodeAreaDemoPageState extends BaseDemoPageState<ExplodeAreaDemoPage> {
         color: color,
         borderRadius: BorderRadius.circular(12),
         boxShadow: const [
-          BoxShadow(
-            color: Colors.black12,
-            blurRadius: 6,
-            offset: Offset(0, 3),
-          ),
+          BoxShadow(color: Colors.black12, blurRadius: 6, offset: Offset(0, 3)),
         ],
       ),
       child: Column(
