@@ -1,6 +1,4 @@
-<p align="center">
-  <img src="assets/icon/explode_icon.png" height="100" alt="explode logo"/>
-</p>
+<img src="https://raw.githubusercontent.com/Krutikgohel/explode/main/assets/icon/explode_icon.png" alt="explode logo"/>
 
 [![Pub Version](https://img.shields.io/pub/v/explode?style=flat-square&color=blue)](https://pub.dev/packages/explode)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
