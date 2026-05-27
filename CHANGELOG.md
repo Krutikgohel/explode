@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.0+4
+
+- Updated package branding and logo/icon assets.
+- Fixed image rendering and asset references in documentation.
+
 ## 1.0.0+3
 
 - Updated package branding and logo/icon assets.
