@@ -8,6 +8,22 @@ repository: https://github.com/Krutikgohel/explode
 issue_tracker: https://github.com/Krutikgohel/explode/issues
 documentation: https://github.com/Krutikgohel/explode#readme
 
+screenshots:
+  - description: Explode package logo
+    path: assets/icon/logo.png
+  - description: Default explode effect with circle particles and standard duration.
+    path: assets/default.gif
+  - description: Circle particle shape explosion
+    path: assets/circle_particles.gif
+  - description: Fast animation duration explosion
+    path: assets/fast_speed.gif
+  - description: Small particle size explosion
+    path: assets/small_particles.gif
+  - description: Profile card complex UI explosion
+    path: assets/profile_card.gif
+  - description: Small explode area constraint
+    path: assets/small_area.gif
+
 environment:
   sdk: ^3.7.0
   flutter: ">=3.0.0"
