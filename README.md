@@ -1,14 +1,12 @@
 <p align="center">
-  <img src="assets/icon/explode_icon.png" height="160" alt="explode logo"/>
+  <img src="assets/icon/explode_icon.png" height="100" alt="explode logo"/>
 </p>
 
-<p align="center">
-  <a href="https://pub.dev/packages/explode"><img src="https://img.shields.io/pub/v/explode.svg" alt="Pub Version"/></a>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"/></a>
-  <a href="https://pub.dev/packages/explode/score"><img src="https://img.shields.io/pub/points/explode" alt="Pub Points"/></a>
-  <img src="https://img.shields.io/badge/Dart-3.7+-blue.svg" alt="Dart"/>
-  <img src="https://img.shields.io/badge/Flutter-stable-02569B?logo=flutter&logoColor=white" alt="Flutter"/>
-</p>
+[![Pub Version](https://img.shields.io/pub/v/explode?style=flat-square&color=blue)](https://pub.dev/packages/explode)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
+[![Pub Points](https://img.shields.io/pub/points/explode?style=flat-square&color=green)](https://pub.dev/packages/explode)
+![Dart](https://img.shields.io/badge/Dart-%3E%3D2.17-blue?style=flat-square&logo=dart)
+![Flutter](https://img.shields.io/badge/Flutter-%3E%3D3.0-blue?style=flat-square&logo=flutter)
 
 ## Description
 
