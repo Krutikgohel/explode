@@ -334,7 +334,7 @@ class ParticlePainter extends CustomPainter {
       if (particle.life <= 0) continue;
       
       double opacity = (particle.life / particle.maxLife).clamp(0.0, 1.0);
-      paint.color = particle.color.withOpacity((opacity * particle.color.opacity).clamp(0.0, 1.0));
+      paint.color = particle.color.withValues(alpha: (opacity * particle.color.a).clamp(0.0, 1.0));
       
       if (shape == ExplodeParticleShape.circle) {
          canvas.drawCircle(
