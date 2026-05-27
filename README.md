@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/icon/explode_icon.png" width="100%" alt="explode logo"/>
+  <img src="assets/icon/explode_icon.png" height="160" alt="explode logo"/>
 </p>
 
 <p align="center">
@@ -31,7 +31,7 @@ A lightweight Flutter package that turns any widget into a satisfying particle e
 Out-of-the-box explosion with circle particles and standard duration.
 
 <p align="center">
-  <img src="assets/default.gif" width="100%" alt="Default explode effect"/>
+  <img src="assets/default.gif" width="320" alt="Default explode effect"/>
 </p>
 
 ### Particle shapes
