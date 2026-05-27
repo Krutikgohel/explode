@@ -38,6 +38,7 @@ class _BlastHomePageState extends State<BlastHomePage> {
     DurationDemoPage(),
     ParticleCustomizationPage(),
     ComplexUIDemoPage(),
+    ExplodeAreaDemoPage(),
   ];
 
   final List<String> _titles = [
@@ -45,6 +46,7 @@ class _BlastHomePageState extends State<BlastHomePage> {
     "Animation Duration",
     "Particle Customization",
     "Complex UI",
+    "Explode Area",
   ];
 
   @override
@@ -129,11 +131,11 @@ class DemoItem extends StatelessWidget {
             ),
           ],
         ),
-        TextButton.icon(
-          onPressed: onReset,
-          icon: const Icon(Icons.refresh, size: 16),
-          label: const Text("Reset"),
-        ),
+        // TextButton.icon(
+        //   onPressed: onReset,
+        //   icon: const Icon(Icons.refresh, size: 16),
+        //   label: const Text("Reset"),
+        // ),
       ],
     );
   }
@@ -461,6 +463,88 @@ class _ComplexUIDemoPageState extends BaseDemoPageState<ComplexUIDemoPage> {
           ),
         ),
       ],
+    );
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Page 5: Explode Area
+// -----------------------------------------------------------------------------
+class ExplodeAreaDemoPage extends BaseDemoPage {
+  const ExplodeAreaDemoPage({super.key});
+
+  @override
+  State<ExplodeAreaDemoPage> createState() => _ExplodeAreaDemoPageState();
+}
+
+class _ExplodeAreaDemoPageState extends BaseDemoPageState<ExplodeAreaDemoPage> {
+  final ExplodeController _smallAreaCtrl = ExplodeController();
+  final ExplodeController _largeAreaCtrl = ExplodeController();
+
+  @override
+  Widget build(BuildContext context) {
+    return buildPageLayout(
+      onResetAll: () {
+        _smallAreaCtrl.reset();
+        _largeAreaCtrl.reset();
+      },
+      children: [
+        DemoItem(
+          label: "Small Explode Area (100x100)",
+          controller: _smallAreaCtrl,
+          onReset: _smallAreaCtrl.reset,
+          child: Explode(
+            controller: _smallAreaCtrl,
+            explodeArea: const Size(100, 100),
+            child: _buildAreaBox("Small (100x100)", Icons.zoom_in_map, Colors.teal),
+          ),
+        ),
+        SizedBox(height: 100,),
+        DemoItem(
+          label: "Large Explode Area (600x600)",
+          controller: _largeAreaCtrl,
+          onReset: _largeAreaCtrl.reset,
+          child: Explode(
+            controller: _largeAreaCtrl,
+            explodeArea: const Size(600, 600),
+            child: _buildAreaBox("Large (600x600)", Icons.zoom_out_map, Colors.indigo),
+          ),
+        ),
+        SizedBox(height: 100,),
+      ],
+    );
+  }
+
+  Widget _buildAreaBox(String label, IconData icon, Color color) {
+    return Container(
+      width: 110,
+      height: 90,
+      decoration: BoxDecoration(
+        color: color,
+        borderRadius: BorderRadius.circular(12),
+        boxShadow: const [
+          BoxShadow(
+            color: Colors.black12,
+            blurRadius: 6,
+            offset: Offset(0, 3),
+          ),
+        ],
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(icon, color: Colors.white, size: 28),
+          const SizedBox(height: 8),
+          Text(
+            label,
+            style: const TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+              fontSize: 12,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
