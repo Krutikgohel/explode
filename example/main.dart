@@ -17,19 +17,19 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         scaffoldBackgroundColor: Colors.grey[100],
       ),
-      home: const BlastHomePage(),
+      home: const ExplodeHomePage(),
     );
   }
 }
 
-class BlastHomePage extends StatefulWidget {
-  const BlastHomePage({super.key});
+class ExplodeHomePage extends StatefulWidget {
+  const ExplodeHomePage({super.key});
 
   @override
-  State<BlastHomePage> createState() => _BlastHomePageState();
+  State<ExplodeHomePage> createState() => _ExplodeHomePageState();
 }
 
-class _BlastHomePageState extends State<BlastHomePage> {
+class _ExplodeHomePageState extends State<ExplodeHomePage> {
   final PageController _pageController = PageController();
   int _currentPage = 0;
 
@@ -124,7 +124,7 @@ class DemoItem extends StatelessWidget {
         Stack(
           alignment: Alignment.center,
           children: [
-            // Placeholder area to keep layout stable when blasted
+            // Placeholder area to keep layout stable when exploded
             const SizedBox(width: 120, height: 120),
             GestureDetector(onTap: () => controller.explode(), child: child),
           ],
