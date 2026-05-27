@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.0+3
+
+- Updated package branding and logo/icon assets.
+- Improved README presentation and visual appearance on pub.dev.
+- Fixed image rendering and asset references in documentation.
+
 ## 1.0.0+2
 
 - Fixed README image rendering issues on pub.dev.
