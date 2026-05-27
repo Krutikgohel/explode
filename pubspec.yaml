@@ -2,7 +2,7 @@ name: explode
 description: >-
   A lightweight Flutter package that turns any widget into a satisfying
   particle explosion with customizable shapes, speed, density, and spread area.
-version: 1.0.0
+version: 1.0.0+1
 homepage: https://github.com/Krutikgohel/explode
 repository: https://github.com/Krutikgohel/explode
 issue_tracker: https://github.com/Krutikgohel/explode/issues
